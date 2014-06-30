@@ -1,4 +1,4 @@
 conf-paper-template
 ===================
 
-A conference paper template using IEEEtrans
+A conference paper & poster & presentation template using IEEEtrans & baposter & beamer.
