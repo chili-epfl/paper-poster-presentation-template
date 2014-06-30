@@ -1,0 +1,178 @@
+\documentclass[landscape, a0paper]{baposter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+
+\usepackage[numbers]{natbib}
+\usepackage{bibspacing}
+\usepackage{url}
+
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{bm}
+
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Settings & Documentwise Variables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{../figures/}}
+
+\newcommand{\papertitle}{Title Here}
+\newcommand{\authorlist}{Author Author, Author2 Author2}
+\newcommand{\papersubject}{Subject Here}
+\newcommand{\paperkeywords}{Keywords Here}
+
+\selectcolormodel{cmyk}
+
+\newcommand{\captionfont}{\footnotesize}
+
+\renewcommand{\refname}{}
+
+\newenvironment{llist}{\begin{list}{$\bullet$}{\leftmargin=1em \itemindent=0em \parskip=0em \parsep=0pt}}{\end{list}}
+\newenvironment{llist2}{\begin{list}{$\triangleright$}{\leftmargin=1em \itemindent=0em \parskip=0em \parsep=0pt}}{\end{list}}
+
+\setlength{\bibspacing}{\baselineskip}
+
+\definecolor{skyblue}{rgb}{0.88,0.95,0.98}
+\definecolor{blue}{rgb}{0.05,0.2,1}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF metadata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pdfinfo{
+	/Title (\papertitle)
+	/Author (\authorlist)
+	/Subject (\papersubject)
+	/Keywords (\paperkeywords)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Actual Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{poster}{
+	% Column spacing
+	colspacing=1em,
+	% Color style
+	bgColorOne=white,
+	bgColorTwo=white,
+	borderColor=blue,
+	headerColorOne=skyblue,
+	headerColorTwo=black,
+	headerFontColor=black,
+	boxColorOne=white,
+	boxColorTwo=skyblue,
+	% Format of textbox
+	textborder=rounded,
+	% Format of text header
+	headerborder=open,
+	headerheight=0.12\textheight,
+	headershape=rounded,
+	headershade=plain,
+	headerfont=\Large\textsf,
+	boxshade=plain,
+	background=plain,
+	linewidth=2pt
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left logo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+%\includegraphics[height=7em]{logo.png}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+	\sf \vspace{5pt}
+	\papertitle
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Authors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+	\sf \Large \vspace{-3pt} %Sans Serif
+	\textbf{\authorlist}\\
+	\large
+	Affiliations\\
+	Emails
+	\vspace{0pt}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right logo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+	%\includegraphics[height=7em]{logo.png}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Abstract}{name=abstract,column=0,row=0}{
+	Abstract Here.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Introduction}{name=introduction,column=0,below=abstract}{
+	Introduction Here. \cite{example}
+	\begin{llist}
+		\item Example list
+	\end{llist}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Acknowledgements}{name=acknowledgements,column=0,below=introduction}{
+	Acknowledgements Here.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{References}{name=references,column=0,below=acknowledgements, above=bottom}{
+\begin{tiny}
+	\setlength{\parskip}{-2mm}
+	\bibliographystyle{unsrtnat}
+	\bibliography{../references}
+\end{tiny}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Methodology}{name=methodology,column=1,span=2}{
+	Methodology Here.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Results}{name=results,column=1,span=2,below=methodology, above=bottom}{
+	Results Here.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Conclusion}{name=conclusion,column=3}{
+	Conclusion Here.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Demonstration}{name=demonstration,column=3,below=conclusion, above=bottom}{
+	\begin{center}
+		%\includegraphics[width=\textwidth]{qrcode.png}
+		\footnotesize \url{Link to Youtube}
+	\end{center}
+}
+
+\end{poster}
+
+\end{document}
