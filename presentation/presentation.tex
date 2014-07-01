@@ -1,0 +1,156 @@
+\documentclass[10pt]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{beamerthemebars}
+
+\usepackage[utf8x]{inputenc}
+
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{textcomp}
+
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{pbox}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{caption}
+\usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Settings & Documentwise Variables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usefonttheme[onlymath]{serif}
+\let\Tiny=\tiny
+
+\graphicspath{{../figures/}}
+
+\newcommand{\presentationtitle}{Title Here}
+\newcommand{\presentationtitleshort}{Short Title Here}
+\newcommand{\presentingauthor}{Author Author}
+\newcommand{\presentationdate}{01.01.3000}
+\newcommand{\authorlist}{Author Author, Author2 Author2}
+\newcommand{\instituteabbrv}{Institute Name Abbreviation}
+\newcommand{\institutename}{Institute Name}
+\newcommand{\papersubject}{Subject Here}
+\newcommand{\paperkeywords}{Keywords Here}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%\logo{\includegraphics[height=1.0cm]{logo.eps}\vspace{-0.2cm}}
+
+%Beamer theme
+\usetheme{Boadilla}
+\usecolortheme{dolphin} 
+\setbeamertemplate{caption}[numbered]
+\captionsetup{labelformat=simple}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{navigation symbols}{}
+
+%Bold face
+\renewcommand{\b}[1]{\textbf{#1}}
+
+%Equal spacing in itemize
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{\fill}\olditem}
+\newenvironment{subitemize}{\begin{itemize}\vspace{\fill}}{\vspace{\fill}\end{itemize}}
+
+%Box around equation
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF metadata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+	pdftitle={\presentationtitle},
+	pdfauthor={\authorlist},
+	pdfsubject={\papersubject},
+	pdfkeywords={\paperkeywords},
+}
+
+\title[\presentationtitleshort]{\presentationtitle}
+\author{\presentingauthor}
+\institute[\instituteabbrv]{\institutename}
+\date{\presentationdate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Actual document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%Title page stuff
+\frame{\titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Motivation}
+	
+	\begin{frame}{Background \& our motivation}
+	\begin{itemize}
+		\item Why are we doing this? \cite{example}
+	\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Table of contents}
+		\tableofcontents
+	\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\section{Introduction}
+	
+	\begin{frame}{Introduction}
+	\begin{itemize}
+		\item What is the problem?
+	\end{itemize}
+	\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\section{Methodology}
+
+	\begin{frame}{Methodology}
+	\begin{itemize}
+		\item What did we do?
+	\end{itemize}
+	\end{frame}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+
+	\begin{frame}{Results}
+	\begin{itemize}
+		\item What did we learn?
+	\end{itemize}
+	\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\section{Conclusion}
+	
+	\begin{frame}{Conclusion \& future work}
+	\begin{itemize}
+		\item We will revolutionize the world...
+	\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Questions \& references}
+	\begin{center}
+		\LARGE
+		Thank you for listening!\\ \vspace{10pt}Questions?
+	\end{center}
+		\fontsize{7pt}{8.4}\selectfont
+		\bibliographystyle{plain}
+		\bibliography{../references}
+	\end{frame}
+
+\end{document}
+\end{document}
+

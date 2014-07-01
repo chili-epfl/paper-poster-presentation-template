@@ -4,3 +4,6 @@
 *.out
 *.bbl
 *.blg
+*.nav
+*.snm
+*.toc
