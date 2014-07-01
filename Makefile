@@ -5,15 +5,15 @@
 all: paper/paper.pdf poster/poster.pdf presentation/presentation.pdf
 
 paper/paper.pdf: paper/paper.tex
-	cd paper && latexmk -pdf -pdflatex="pdflatex -interaction batchmode" -use-make paper.tex
+	cd paper && latexmk -pdf -pdflatex="pdflatex -interaction batchmode -shell-escape" -use-make paper.tex
 	cd ../
 
 poster/poster.pdf: poster/poster.tex
-	cd poster && latexmk -pdf -pdflatex="pdflatex -interaction batchmode" -use-make poster.tex
+	cd poster && latexmk -pdf -pdflatex="pdflatex -interaction batchmode -shell-escape" -use-make poster.tex
 	cd ../
 	
 presentation/presentation.pdf: presentation/presentation.tex
-	cd presentation && latexmk -pdf -pdflatex="pdflatex -interaction batchmode" -use-make presentation.tex
+	cd presentation && latexmk -pdf -pdflatex="pdflatex -interaction batchmode -shell-escape" -use-make presentation.tex
 	cd ../
 	
 paper-clean: 
