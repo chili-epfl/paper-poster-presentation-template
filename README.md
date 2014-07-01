@@ -1,4 +1,22 @@
 conf-paper-template
 ===================
 
-A conference paper & poster & presentation template using IEEEtrans & baposter & beamer.
+A paper/report/poster/presentation package template using IEEEtrans, baposter and beamer. Modules share figures and bibliography.
+
+Here are the current modules:
+
+  - paper: A conference paper template that uses the IEEEtrans style
+  - poster: A poster template that uses baposter
+  - presentation: A presentation template that uses beamer
+
+More template modules will be added with different styles.
+
+How to build
+------------
+
+In the root directory, run
+
+```
+make
+```
+
