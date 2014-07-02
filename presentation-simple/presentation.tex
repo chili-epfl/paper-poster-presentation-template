@@ -6,8 +6,6 @@
 
 \usepackage{beamerthemebars}
 
-\usepackage[utf8x]{inputenc}
-
 \usepackage{hyperref}
 
 \usepackage{amsmath}
@@ -25,11 +23,62 @@
 \usepackage{subcaption}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Settings & Documentwise Variables
+% Font settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usefonttheme[onlymath]{serif}
+\if@doNoFlama%
+	% Sans serif math option
+	\if@doSans%
+		% sans serif math %
+		\usepackage[no-math]{fontspec}%	
+		\setmainfont{Arial}%
+	\else%
+		% serif math %
+		\usepackage{fontspec}%	
+		\usefonttheme[onlymath]{serif}%
+	\fi%
+	\newfontfamily\Light{Arial}%
+	\newfontfamily\Book{Arial-Bold}%
+	\newfontfamily\Medium{Arial-Bold}%
+	\setsansfont{Arial}%
+\else%
+	% Sans serif math option
+	\if@doSans%
+		\usepackage[no-math]{fontspec}%	
+		\setmainfont{FlamaLight}%
+	\else%
+		\usepackage{fontspec}%	
+		\usefonttheme[onlymath]{serif}%
+	\fi%
+	\newfontfamily\Light{FlamaLight}%
+	\newfontfamily\Book{FlamaBook}%
+	\newfontfamily\Medium{FlamaMedium}%
+	\setsansfont{FlamaLight}%
+\fi%
+
+\renewcommand\UrlFont{\Medium}
+% Titlepage
+\setbeamerfont{title}{family=\Light,size=\fontsize{20}{20}}
+\setbeamerfont{subtitle}{family=\Light,size=\fontsize{12}{14}}
+\setbeamerfont{date}{size=\fontsize{8}{10}}
+\setbeamerfont{author}{size=\fontsize{12}{15}}
+\setbeamerfont{institute}{size=\fontsize{8}{10}}
+% Section
+\setbeamerfont{section title}{size=\LARGE}
+% Content
+\setbeamerfont{frametitle}{family=\Light,size=\large}
+\setbeamerfont{copyright text}{family=\Light,size=\tiny}
+\setbeamerfont{block title}{family=\Book,size=\large}
+\setbeamerfont{block title alerted}{family=\Book,size=\large}
+\setbeamerfont{alerted text}{family=\Medium}
+% Captions
+\setbeamerfont{caption name}{family=\Book}
+
 \let\Tiny=\tiny
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Settings & Documentwise Variables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \graphicspath{{../figures/}}
 
@@ -45,15 +94,32 @@
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 
-%\logo{\includegraphics[height=1.0cm]{logo.eps}\vspace{-0.2cm}}
+\logo{
+	\makebox[0.98\paperwidth]{%
+		\includegraphics[height=0.7cm]{school-logo.eps}%
+		\hfill%
+		%\includegraphics[height=0.7cm]{lab-logo.eps}%
+	}
+	\vspace{-0.2cm}
+}
 
 %Beamer theme
 \usetheme{Boadilla}
-\usecolortheme{dolphin} 
+\usecolortheme{beaver} 
 \setbeamertemplate{caption}[numbered]
 \captionsetup{labelformat=simple}
 \setbeamertemplate{bibliography item}[text]
 \setbeamertemplate{navigation symbols}{}
+
+%TOC
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+%Itemize bullet style
+\newcommand{\rightTextArrow}{\color{darkred}$\blacktriangleright$}
+\setbeamertemplate{itemize item}{\rightTextArrow}
+\setbeamertemplate{itemize subitem}{\rightTextArrow}
+\setbeamertemplate{itemize subsubitem}{\rightTextArrow}
 
 %Bold face
 \renewcommand{\b}[1]{\textbf{#1}}
