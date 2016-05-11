@@ -120,11 +120,11 @@
 	% Sans serif math option
 	\if@doSans%
 		% sans serif math %
-		\usepackage[no-math]{fontspec}%	
+		\usepackage[no-math]{fontspec}%
 		\setmainfont{Arial}%
 	\else%
 		% serif math %
-		\usepackage{fontspec}%	
+		\usepackage{fontspec}%
 		\usefonttheme[onlymath]{serif}%
 	\fi%
 	\newfontfamily\Light{Arial}%
@@ -134,16 +134,16 @@
 \else%
 	% Sans serif math option
 	\if@doSans%
-		\usepackage[no-math]{fontspec}%	
-		\setmainfont{FlamaLight}%
+		\usepackage[no-math]{fontspec}%
+		\setmainfont[ Path = ../fonts/ ]{FlamaLight}%
 	\else%
-		\usepackage{fontspec}%	
+		\usepackage{fontspec}%
 		\usefonttheme[onlymath]{serif}%
 	\fi%
-	\newfontfamily\Light{FlamaLight}%
-	\newfontfamily\Book{FlamaBook}%
-	\newfontfamily\Medium{FlamaMedium}%
-	\setsansfont{FlamaLight}%
+	\newfontfamily\Light[ Path = ../fonts/ ]{FlamaLight}%
+	\newfontfamily\Book[ Path = ../fonts/ ]{FlamaBook}%
+	\newfontfamily\Medium[ Path = ../fonts/ ]{FlamaMedium}%
+	\setsansfont[ Path = ../fonts/ ]{FlamaLight}%
 \fi%
 
 \renewcommand\UrlFont{\Medium}
@@ -170,7 +170,7 @@
 
 % Titlepage structure
 \def\maketitle{\ifbeamer@inframe\titlepage\else{\setbeamertemplate{background}{}\frame[plain]{\titlepage}}\fi}
-    
+
 \def\titlepage{
 \usebeamertemplate{title page}
 }
@@ -194,10 +194,10 @@
 	\ifx\insertdate\@empty%
 	\else%
 		{\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
-	\fi% 
-	
+	\fi%
+
 	\vfill
-	
+
 	\ifx\insertauthor\@empty%
 	\else%
 		{\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
@@ -206,7 +206,7 @@
 	\else%
 		\vspace*{3mm}
 		{\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
-	\fi% 
+	\fi%
 	\vspace*{5mm}
 	\end{minipage}
 }
@@ -280,7 +280,7 @@
   \usebeamerfont{block body}%
   \begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex,vmode]{block body}%
 }
-\setbeamertemplate{block end}  
+\setbeamertemplate{block end}
 {\end{beamercolorbox}\vskip\smallskipamount}
 
 \setbeamertemplate{block alerted begin}

@@ -1,12 +1,1 @@
-*.backup
-*.aux
-*.log
-*.out
-*.bbl
-*.blg
-*.nav
-*.snm
-*.toc
-*.fls
-*.fdb_latexmk
-*.swp
+build/

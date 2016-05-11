@@ -30,11 +30,11 @@
 	% Sans serif math option
 	\if@doSans%
 		% sans serif math %
-		\usepackage[no-math]{fontspec}%	
+		\usepackage[no-math]{fontspec}%
 		\setmainfont{Arial}%
 	\else%
 		% serif math %
-		\usepackage{fontspec}%	
+		\usepackage{fontspec}%
 		\usefonttheme[onlymath]{serif}%
 	\fi%
 	\newfontfamily\Light{Arial}%
@@ -44,16 +44,16 @@
 \else%
 	% Sans serif math option
 	\if@doSans%
-		\usepackage[no-math]{fontspec}%	
-		\setmainfont{FlamaLight}%
+		\usepackage[no-math]{fontspec}%
+		\setmainfont[ Path = ../fonts/ ]{FlamaLight}%
 	\else%
-		\usepackage{fontspec}%	
+		\usepackage{fontspec}%
 		\usefonttheme[onlymath]{serif}%
 	\fi%
-	\newfontfamily\Light{FlamaLight}%
-	\newfontfamily\Book{FlamaBook}%
-	\newfontfamily\Medium{FlamaMedium}%
-	\setsansfont{FlamaLight}%
+	\newfontfamily\Light[ Path = ../fonts/]{FlamaLight}%
+	\newfontfamily\Book[ Path = ../fonts/ ]{FlamaBook}%
+	\newfontfamily\Medium[ Path = ../fonts/ ]{FlamaMedium}%
+	\setsansfont[ Path = ../fonts/ ]{FlamaLight}%
 \fi%
 
 \renewcommand\UrlFont{\Medium}
@@ -96,16 +96,16 @@
 
 \logo{
 	\makebox[0.98\paperwidth]{%
-		\includegraphics[height=0.7cm]{school-logo.eps}%
+		\includegraphics[height=0.7cm]{school-logo}%
 		\hfill%
-		%\includegraphics[height=0.7cm]{lab-logo.eps}%
+		%\includegraphics[height=0.7cm]{lab-logo}%
 	}
 	\vspace{-0.2cm}
 }
 
 %Beamer theme
 \usetheme{Boadilla}
-\usecolortheme{beaver} 
+\usecolortheme{beaver}
 \setbeamertemplate{caption}[numbered]
 \captionsetup{labelformat=simple}
 \setbeamertemplate{bibliography item}[text]
@@ -159,28 +159,28 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
-	
+
 	\begin{frame}{Background \& our motivation}
 	\begin{itemize}
 		\item Why are we doing this? \cite{example}
 	\end{itemize}
 	\end{frame}
-	
+
 	\begin{frame}
 		\frametitle{Table of contents}
 		\tableofcontents
 	\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-	
+
 	\begin{frame}{Introduction}
 	\begin{itemize}
 		\item What is the problem?
 	\end{itemize}
 	\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methodology}
 
 	\begin{frame}{Methodology}
@@ -188,7 +188,7 @@
 		\item What did we do?
 	\end{itemize}
 	\end{frame}
-	
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
@@ -198,15 +198,15 @@
 	\end{itemize}
 	\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-	
+
 	\begin{frame}{Conclusion \& future work}
 	\begin{itemize}
 		\item We will revolutionize the world...
 	\end{itemize}
 	\end{frame}
-	
+
 	\begin{frame}{Questions \& references}
 	\begin{center}
 		\LARGE
@@ -214,9 +214,8 @@
 	\end{center}
 		\fontsize{7pt}{8.4}\selectfont
 		\bibliographystyle{plain}
-		\bibliography{../references}
+		\bibliography{../../references}
 	\end{frame}
 
 \end{document}
 \end{document}
-

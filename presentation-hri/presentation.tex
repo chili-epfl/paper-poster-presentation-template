@@ -27,11 +27,11 @@
 
 \usetheme{hri}
 
-\usepackage{dtklogos} % must be loaded after theme
+\usepackage{dtk-logos} % must be loaded after theme
 \usepackage{tikz}
 \usetikzlibrary{mindmap,backgrounds,positioning}
 
-\graphicspath{{../figures/}}
+\graphicspath{{./figures/}{../figures/}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Settings & Documentwise Variables
@@ -80,28 +80,28 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Motivation \& Overview}
-	
+
 	\begin{frame}{Background \& our motivation}
 	\begin{itemize}
 		\item Why are we doing this? \cite{example}
 	\end{itemize}
 	\end{frame}
-	
+
 	\begin{frame}
 		\frametitle{Table of contents}
 		\tableofcontents
 	\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-	
+
 	\begin{frame}{Introduction}
 	\begin{itemize}
 		\item What is the problem?
 	\end{itemize}
 	\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methodology}
 
 	\begin{frame}{Methodology}
@@ -109,7 +109,7 @@
 		\item What did we do?
 	\end{itemize}
 	\end{frame}
-	
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
@@ -119,9 +119,9 @@
 	\end{itemize}
 	\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-	
+
 	\begin{frame}{Conclusion \& future work}
 	\begin{itemize}
 		\item We will revolutionize the world...
@@ -135,7 +135,7 @@
 	\end{center}
 		\fontsize{7pt}{8.4}\selectfont
 		\bibliographystyle{plain}
-		\bibliography{../references}
+		\bibliography{../../references}
 	\end{frame}
 
 \end{document}
@@ -183,26 +183,26 @@
 % \begin{frame}{TikZ figure}
 % 	\begin{figure}
 % 		\centering
-% 
+%
 % \resizebox{\paperwidth}{!}{%
-% 
+%
 % \tikzset{subpart/.style={draw, font=\scriptsize, fill opacity=0.5, text opacity=1, fill=white!50}}
-% 
+%
 % \begin{tikzpicture}[
 %     >=latex,
 %     every edge/.style={draw, very thick},
 %     skill/.style={draw, rounded corners, align=center, inner sep=5pt, fill=black!20},
 %     label/.style={midway, align=center, font=\scriptsize, fill=white}]
-% 
+%
 %   %%% ORO
 %     \node at (0,0)[skill, ultra thick, fill=hriSec2Dark!50] (oro) {{\sc Oro} -- Symbolic facts \\ and beliefs management};
-%   
+%
 %   %%% HATP
 %   \node at (-6, 2.5)[skill, fill=hriSec1!50] (hatp) {HATP -- Human-aware \\ symbolic task planning};
-%   
+%
 %   %%% DIALOGS
 %   \node at (-6, -3) [skill, fill=hriSec3Dark!50] (dialogs) {{\sc Dialogs} \\ Dialogue processing};
-% 
+%
 %   %%% SPARK
 %   \node at (4,-3.5)[skill, fill=hriSec3!50] (spark) {%
 %       \begin{tikzpicture}
@@ -212,10 +212,10 @@
 %         \node [subpart, right=0.2 of geom-model] (fact-prod) {Symbolic facts production};
 %       \end{tikzpicture}
 %     };
-% 
+%
 %   %%% MHP
 %     \node at (9,0)[skill, fill=hriSec3CompDark!50] (mhp) {{\sc mhp} -- Human-aware \\ Motion and Manipulation \\ Planning};
-% 
+%
 %   %%% SHARY
 %   \node at (4,4.5)[skill, fill=hriSec1Comp!50] (shary) {%
 %       \begin{tikzpicture}
@@ -225,8 +225,8 @@
 %         \node [subpart, right=0.2 of sit-asses] {Action instantiation, \\ execution and monitoring};
 %       \end{tikzpicture}
 %     };
-% 
-% 
+%
+%
 %   %%% LOWLEVEL
 %   \node [skill, below=0.7 of spark] (lowlevel) {%
 %       \begin{tikzpicture}
@@ -235,10 +235,10 @@
 %         %\node [subpart, align=right, right=0.2 of perception] {{\bf Actuation} \\ Head's pan-tilt unit, grippers, arms, wheels};
 %       \end{tikzpicture}
 %   };
-% 
+%
 %   %%% Separation between deliberative layer and sensori-motor layer
 %   \draw[dotted, thick] (-8,-5) -- (12, -5);
-% 
+%
 %   %%% Relations between components
 %   \path (shary.340) edge [<->, bend left] node[label] {motion plan \\ requests} (mhp);
 %   \path (shary.west) edge [<->, bend right] node[label] {shared \\ plans} (hatp);
@@ -250,7 +250,7 @@
 %   \path (shary) edge [<->, bend left] node[label] {action monitoring \\ and management of \\ position hypotheses} (spark);
 %   \path (lowlevel) edge [->] (spark);
 %   \path (lowlevel.east) edge [<-, bend right=80, looseness=1.5] node[label] {atomic\\actions} (shary.east);
-% 
+%
 % \end{tikzpicture}
 % }
 % 	\end{figure}
