@@ -6,9 +6,9 @@ FLAGS_XELATEX =  	-use-make	-bibtex	-xelatex	-outdir=$(OUTDIR)
 
 ###############################################################################
 
-all: paper poster presentation-simple presentation-hri
+all: paper poster poster-nccr presentation-simple presentation-hri
 
-clean: clean-paper clean-poster clean-presentation-simple clean-presentation-hri
+clean: clean-paper clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
 
 ###############################################################################
 
@@ -31,6 +31,17 @@ poster/$(OUTDIR)/poster.pdf: poster/poster.tex
 
 clean-poster:
 	rm -f poster/$(OUTDIR)/*
+
+###############################################################################
+
+poster-nccr: poster-nccr/$(OUTDIR)/poster.pdf
+
+poster-nccr/$(OUTDIR)/poster.pdf: poster-nccr/poster.svg
+	mkdir -p poster-nccr/$(OUTDIR)
+	cd poster-nccr && inkscape poster.svg --export-pdf=$(OUTDIR)/poster.pdf
+
+clean-poster-nccr:
+	rm -f poster-nccr/$(OUTDIR)/*
 
 ###############################################################################
 
