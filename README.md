@@ -3,6 +3,8 @@ paper-poster-presentation-template
 
 A paper/report/poster/presentation package template using IEEEtrans, baposter and beamer. Modules share figures and bibliography.
 
+For example outputs, see the `output/` directory.
+
 Tested with TeX Live 2015. Beamer video playback tested with Okular 0.24.2 on KDE 4.14.16.
 
 Here are the current modules:
@@ -23,3 +25,14 @@ In the root directory, run
 ```
 make
 ```
+
+How to export version-controlled outputs
+----------------------------------------
+
+In the root directory, run
+
+```
+make output
+```
+
+This will copy all the output PDFs and videos from the build directories to the `output/` directory in the root.
