@@ -3,6 +3,7 @@ FIGDIR = figures
 
 FLAGS_PDFLATEX =	-use-make	-bibtex	-pdf    	-outdir=$(OUTDIR)
 FLAGS_XELATEX =  	-use-make	-bibtex	-xelatex	-outdir=$(OUTDIR)
+FLAGS_LUALATEX = 	-use-make 	-bibtex -lualatex	-outdir=$(OUTDIR)
 
 ###############################################################################
 
@@ -49,7 +50,7 @@ presentation-simple: presentation-simple/$(OUTDIR)/presentation.pdf
 
 presentation-simple/$(OUTDIR)/presentation.pdf: presentation-simple/presentation.tex
 	mkdir -p presentation-simple/$(OUTDIR)
-	cd presentation-simple && latexmk $(FLAGS_XELATEX) presentation.tex
+	cd presentation-simple && latexmk $(FLAGS_LUALATEX) presentation.tex && cd $(OUTDIR) && ln -fs ../videos/ .
 
 clean-presentation-simple:
 	rm -f presentation-simple/$(OUTDIR)/*
@@ -60,7 +61,7 @@ presentation-hri: presentation-hri/$(OUTDIR)/presentation.pdf
 
 presentation-hri/$(OUTDIR)/presentation.pdf: presentation-hri/presentation.tex
 	mkdir -p presentation-hri/$(OUTDIR)
-	cd presentation-hri && latexmk $(FLAGS_XELATEX) presentation.tex
+	cd presentation-hri && latexmk $(FLAGS_LUALATEX) presentation.tex && cd $(OUTDIR) && ln -fs ../videos/ .
 
 clean-presentation-hri:
 	rm -f presentation-hri/$(OUTDIR)/*

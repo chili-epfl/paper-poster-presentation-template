@@ -22,6 +22,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 
+\usepackage{multimedia}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Font settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,7 +82,7 @@
 % Settings & Documentwise Variables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\graphicspath{{../figures/}}
+\graphicspath{{figures/}{../figures/}}
 
 \newcommand{\presentationtitle}{Title Here}
 \newcommand{\presentationtitleshort}{Short Title Here}
@@ -160,62 +162,70 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
 
-	\begin{frame}{Background \& our motivation}
+\begin{frame}{Background \& our motivation}
 	\begin{itemize}
 		\item Why are we doing this? \cite{example}
 	\end{itemize}
-	\end{frame}
+\end{frame}
 
-	\begin{frame}
-		\frametitle{Table of contents}
-		\tableofcontents
-	\end{frame}
+\begin{frame}
+	\frametitle{Table of contents}
+	\tableofcontents
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-	\begin{frame}{Introduction}
+\begin{frame}{Introduction}
 	\begin{itemize}
 		\item What is the problem?
 	\end{itemize}
-	\end{frame}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methodology}
 
-	\begin{frame}{Methodology}
+\begin{frame}{Methodology}
 	\begin{itemize}
 		\item What did we do?
 	\end{itemize}
-	\end{frame}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
-	\begin{frame}{Results}
+\begin{frame}{Results}
 	\begin{itemize}
 		\item What did we learn?
 	\end{itemize}
-	\end{frame}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Video}
+	Here's an example video (go to presentation mode to play):
+	\movie[width=0.744\paperheight,height=0.6\paperheight,showcontrols=true,autostart,loop]
+        {\includegraphics[height=0.6\paperheight]{random-mp4-snapshot}}
+        {videos/random.mp4}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
-	\begin{frame}{Conclusion \& future work}
+\begin{frame}{Conclusion \& future work}
 	\begin{itemize}
 		\item We will revolutionize the world...
 	\end{itemize}
-	\end{frame}
+\end{frame}
 
-	\begin{frame}{Questions \& references}
+\begin{frame}{Questions \& references}
 	\begin{center}
 		\LARGE
 		Thank you for listening!\\ \vspace{10pt}Questions?
 	\end{center}
-		\fontsize{7pt}{8.4}\selectfont
-		\bibliographystyle{plain}
-		\bibliography{../../references}
-	\end{frame}
+	\fontsize{7pt}{8.4}\selectfont
+	\bibliographystyle{plain}
+	\bibliography{../../references}
+\end{frame}
 
-\end{document}
 \end{document}
