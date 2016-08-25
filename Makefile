@@ -6,14 +6,14 @@ FLAGS_LUALATEX = 	-use-make 	-bibtex -lualatex	-outdir=$(OUTDIR)
 
 ###############################################################################
 
-all: paper-ieeetran poster poster-nccr presentation-simple presentation-hri
+all: paper-ieeetran paper-sigchi poster poster-nccr presentation-simple presentation-hri
 
-output: output-paper-ieeetran output-poster output-poster-nccr output-presentation-simple output-presentation-hri
+output: output-paper-ieeetran output-paper-sigchi output-poster output-poster-nccr output-presentation-simple output-presentation-hri
 
 clean-output:
 	rm -rf output/
 
-clean: clean-paper-ieeetran clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
+clean: clean-paper-ieeetran clean-paper-sigchi clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
 
 ###############################################################################
 # IEEEtran paper
@@ -33,6 +33,25 @@ output/paper-ieeetran/paper-ieeetran.pdf: paper-ieeetran
 
 clean-paper-ieeetran:
 	rm -f paper-ieeetran/$(OUTDIR)/*
+
+###############################################################################
+# SIGCHI paper
+###############################################################################
+
+paper-sigchi: paper-sigchi/$(OUTDIR)/paper-sigchi.pdf
+
+paper-sigchi/$(OUTDIR)/paper-sigchi.pdf: paper-sigchi/paper-sigchi.tex
+	mkdir -p paper-sigchi/$(OUTDIR)
+	cd paper-sigchi && latexmk $(FLAGS_PDFLATEX) paper-sigchi.tex
+
+output-paper-sigchi: output/paper-sigchi/paper-sigchi.pdf
+
+output/paper-sigchi/paper-sigchi.pdf: paper-sigchi
+	mkdir -p output/paper-sigchi/
+	cp paper-sigchi/$(OUTDIR)/paper-sigchi.pdf output/paper-sigchi/
+
+clean-paper-sigchi:
+	rm -f paper-sigchi/$(OUTDIR)/*
 
 ###############################################################################
 # Simple baposter
