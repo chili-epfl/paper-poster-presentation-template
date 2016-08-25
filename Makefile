@@ -6,33 +6,33 @@ FLAGS_LUALATEX = 	-use-make 	-bibtex -lualatex	-outdir=$(OUTDIR)
 
 ###############################################################################
 
-all: paper poster poster-nccr presentation-simple presentation-hri
+all: paper-ieeetran poster poster-nccr presentation-simple presentation-hri
 
-output: output-paper output-poster output-poster-nccr output-presentation-simple output-presentation-hri
+output: output-paper-ieeetran output-poster output-poster-nccr output-presentation-simple output-presentation-hri
 
 clean-output:
 	rm -rf output/
 
-clean: clean-paper clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
+clean: clean-paper-ieeetran clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
 
 ###############################################################################
 # IEEEtran paper
 ###############################################################################
 
-paper: paper/$(OUTDIR)/paper.pdf
+paper-ieeetran: paper-ieeetran/$(OUTDIR)/paper-ieeetran.pdf
 
-paper/$(OUTDIR)/paper.pdf: paper/paper.tex
-	mkdir -p paper/$(OUTDIR)
-	cd paper && latexmk $(FLAGS_PDFLATEX) paper.tex
+paper-ieeetran/$(OUTDIR)/paper-ieeetran.pdf: paper-ieeetran/paper-ieeetran.tex
+	mkdir -p paper-ieeetran/$(OUTDIR)
+	cd paper-ieeetran && latexmk $(FLAGS_PDFLATEX) paper-ieeetran.tex
 
-output-paper: output/paper/paper.pdf
+output-paper-ieeetran: output/paper-ieeetran/paper-ieeetran.pdf
 
-output/paper/paper.pdf: paper
-	mkdir -p output/paper/
-	cp paper/$(OUTDIR)/paper.pdf output/paper/
+output/paper-ieeetran/paper-ieeetran.pdf: paper-ieeetran
+	mkdir -p output/paper-ieeetran/
+	cp paper-ieeetran/$(OUTDIR)/paper-ieeetran.pdf output/paper-ieeetran/
 
-clean-paper:
-	rm -f paper/$(OUTDIR)/*
+clean-paper-ieeetran:
+	rm -f paper-ieeetran/$(OUTDIR)/*
 
 ###############################################################################
 # Simple baposter
