@@ -1,7 +1,7 @@
 paper-poster-presentation-template
 ==================================
 
-A paper/report/poster/presentation package template using IEEEtrans, baposter and beamer. Modules share figures and bibliography.
+A paper/report/poster/presentation package template using ieeetran, sigchi, baposter and beamer. Modules share figures and bibliography.
 
 For example outputs, see the `output/` directory.
 
@@ -9,7 +9,8 @@ Tested with TeX Live 2015. Beamer video playback tested with Okular 0.24.2 on KD
 
 Here are the current modules:
 
-  - **paper**: A IEEEtran conference paper template, built with pdflatex. *Requires the IEEEtran package.*
+  - **paper-ieeetran**: A IEEEtran conference paper template, built with pdflatex. *Requires the IEEEtran package.*
+  - **paper-sigchi**: The official 2016 SIGCHI proceedings paper template, built with pdflatex.
   - **poster**: A baposter poster template, built with pdflatex.
   - **poster-nccr**: NCCR poster template as an SVG, built with inkscape. *Requires inkscape.*
   - **presentation-simple**: A simple beamer presentation template, including in-frame video playback, built with lualatex.
