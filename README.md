@@ -27,6 +27,8 @@ In the root directory, run
 make
 ```
 
+**Important note:** Custom fonts are used in **presentation-simple** and **presentation-hri**; LaTeX will index these fonts the first time these documents are built. Delays up to several minutes can occur.
+
 How to export version-controlled outputs
 ----------------------------------------
 
