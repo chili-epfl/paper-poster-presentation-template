@@ -6,14 +6,14 @@ FLAGS_LUALATEX = 	-use-make 	-bibtex -lualatex	-outdir=$(OUTDIR)
 
 ###############################################################################
 
-all: paper-ieeetran paper-sigchi poster poster-nccr presentation-simple presentation-hri
+all: paper-ieeetran paper-sigchi paper-acm-sig-alternate poster poster-nccr presentation-simple presentation-hri
 
-output: output-paper-ieeetran output-paper-sigchi output-poster output-poster-nccr output-presentation-simple output-presentation-hri
+output: output-paper-ieeetran output-paper-sigchi output-paper-acm-sig-alternate output-poster output-poster-nccr output-presentation-simple output-presentation-hri
 
 clean-output:
 	rm -rf output/
 
-clean: clean-paper-ieeetran clean-paper-sigchi clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
+clean: clean-paper-ieeetran clean-paper-sigchi clean-paper-acm-sig-alternate clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
 
 ###############################################################################
 # IEEEtran paper
@@ -52,6 +52,25 @@ output/paper-sigchi/paper-sigchi.pdf: paper-sigchi
 
 clean-paper-sigchi:
 	rm -f paper-sigchi/$(OUTDIR)/*
+
+###############################################################################
+# ACM SIG Alternate paper
+###############################################################################
+
+paper-acm-sig-alternate: paper-acm-sig-alternate/$(OUTDIR)/paper-acm-sig-alternate.pdf
+
+paper-acm-sig-alternate/$(OUTDIR)/paper-acm-sig-alternate.pdf: paper-acm-sig-alternate/paper-acm-sig-alternate.tex
+	mkdir -p paper-acm-sig-alternate/$(OUTDIR)
+	cd paper-acm-sig-alternate && latexmk $(FLAGS_PDFLATEX) paper-acm-sig-alternate.tex
+
+output-paper-acm-sig-alternate: output/paper-acm-sig-alternate/paper-acm-sig-alternate.pdf
+
+output/paper-acm-sig-alternate/paper-acm-sig-alternate.pdf: paper-acm-sig-alternate
+	mkdir -p output/paper-acm-sig-alternate/
+	cp paper-acm-sig-alternate/$(OUTDIR)/paper-acm-sig-alternate.pdf output/paper-acm-sig-alternate/
+
+clean-paper-acm-sig-alternate:
+	rm -f paper-acm-sig-alternate/$(OUTDIR)/*
 
 ###############################################################################
 # Simple baposter
