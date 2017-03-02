@@ -149,5 +149,17 @@ output/presentation-hri/presentation.pdf: presentation-hri
 	cp presentation-hri/$(OUTDIR)/presentation.pdf output/presentation-hri/
 	cp presentation-hri/videos/* output/presentation-hri/videos/
 
+presentation-hri-notes: presentation-hri/$(OUTDIR)/notes.pdf
+
+presentation-hri/$(OUTDIR)/notes.pdf: presentation-hri/presentation.tex
+	mkdir -p presentation-hri/$(OUTDIR)
+	cd presentation-hri && latexmk $(FLAGS_LUALATEX) -jobname="notes" presentation.tex
+
+output-presentation-hri-notes: output/presentation-hri/notes.pdf
+
+output/presentation-hri/notes.pdf: presentation-hri-notes
+	mkdir -p output/presentation-hri/
+	cp presentation-hri/$(OUTDIR)/notes.pdf output/presentation-hri/
+
 clean-presentation-hri:
 	rm -f presentation-hri/$(OUTDIR)/*

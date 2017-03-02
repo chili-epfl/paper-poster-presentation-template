@@ -27,6 +27,8 @@
 
 \usepackage{multimedia}
 
+\usepackage{xstring}
+
 \usetheme{hri}
 
 \usepackage{dtk-logos} % must be loaded after theme
@@ -49,6 +51,7 @@
 \newcommand{\paperkeywords}{Keywords Here}
 
 \setbeamertemplate{bibliography item}[text]
+\IfStrEq{\jobname}{\detokenize{notes}}{\setbeameroption{show only notes}}{\setbeameroption{hide notes}}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 
@@ -87,6 +90,12 @@
 	\begin{itemize}
 		\item Why are we doing this? \cite{example}
 	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Notes about our motivations...
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}
@@ -101,6 +110,12 @@
 	\begin{itemize}
 		\item What is the problem?
 	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Notes about the problem statement...
+		\end{itemize}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,6 +125,12 @@
 	\begin{itemize}
 		\item What did we do?
 	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Notes about our methodology...
+		\end{itemize}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -119,6 +140,12 @@
 	\begin{itemize}
 		\item What did we learn?
 	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Notes about our results...
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}{Video}
@@ -126,6 +153,12 @@
 	\movie[width=0.744\paperheight,height=0.6\paperheight,showcontrols=true,autostart,loop]
         {\includegraphics[height=0.6\paperheight]{random-mp4-snapshot}}
         {videos/random.mp4}
+
+	\note{
+		\begin{itemize}
+			\item Notes about this video...
+		\end{itemize}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,6 +168,12 @@
 	\begin{itemize}
 		\item We will revolutionize the world...
 	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Notes about the conclusion...
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}{Questions \& references}
@@ -142,9 +181,14 @@
 		\LARGE
 		Thank you for listening!\\ \vspace{10pt}Questions?
 	\end{center}
-	\fontsize{7pt}{8.4}\selectfont
-	\bibliographystyle{plain}
-	\bibliography{../../references}
+
+	\IfStrEq{\jobname}{\detokenize{notes}}{
+		%Nothing
+	}{
+		\fontsize{7pt}{8.4}\selectfont
+		\bibliographystyle{plain}
+		\bibliography{../../references}
+	}
 \end{frame}
 
 \end{document}
