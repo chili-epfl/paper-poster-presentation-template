@@ -58,6 +58,15 @@
 %Bold face
 \renewcommand{\b}[1]{{\Medium #1}}
 
+%Zero left margin
+\makeatletter
+\newlength\beamerleftmargin
+\setlength\beamerleftmargin{\Gm@lmargin}
+\makeatother
+\newcommand{\zeroleftmargin}{%
+	\hspace*{-\beamerleftmargin}%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PDF metadata
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,6 +166,16 @@
 	\note{
 		\begin{itemize}
 			\item Notes about this video...
+		\end{itemize}
+	}
+\end{frame}
+
+\begin{frame}{Zero Left Margin}
+	\zeroleftmargin\includegraphics[width=\paperwidth]{placeholder}
+
+	\note{
+		\begin{itemize}
+			\item This is a frame with exactly zero margin for big images or videos
 		\end{itemize}
 	}
 \end{frame}
