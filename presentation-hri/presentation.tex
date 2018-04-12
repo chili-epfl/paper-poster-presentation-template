@@ -69,6 +69,19 @@
 	\hspace*{-\beamerleftmargin}%
 }
 
+%Imageless autostarting looping movie
+\newcommand{\amovie}[3]{%
+	\movie[width=#1,height=#2,autostart,loop]{\rule{#1}{#2}}{#3}%
+}
+
+%Full screen video slide
+\newcommand{\movieframe}[1]{%
+    \setbeamertemplate{navigation symbols}{}%
+	\begin{frame}[plain]
+		\zeroleftmargin\amovie{\paperwidth}{\paperheight}{#1}
+	\end{frame}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PDF metadata
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,9 +174,12 @@
 
 \begin{frame}{Video}
 	Here's an example video (go to presentation mode to play):
+    
 	\movie[width=0.744\paperheight,height=0.6\paperheight,showcontrols=true,autostart,loop]
         {\includegraphics[height=0.6\paperheight]{random-mp4-snapshot}}
         {videos/random.mp4}
+
+    Full screen video on the next slide...
 
 	\note{
 		\begin{itemize}
@@ -171,6 +187,8 @@
 		\end{itemize}
 	}
 \end{frame}
+
+\movieframe{videos/random.mp4}
 
 \begin{frame}{Zero Left Margin}
 	\zeroleftmargin\includegraphics[width=\paperwidth]{placeholder}
