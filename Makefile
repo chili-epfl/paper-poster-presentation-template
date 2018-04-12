@@ -73,6 +73,25 @@ clean-paper-acm-sig-alternate:
 	rm -f paper-acm-sig-alternate/$(OUTDIR)/*
 
 ###############################################################################
+# llncs2e paper
+###############################################################################
+
+paper-llncs2e: paper-llncs2e/$(OUTDIR)/paper-llncs2e.pdf
+
+paper-llncs2e/$(OUTDIR)/paper-llncs2e.pdf: paper-llncs2e/paper-llncs2e.tex
+	mkdir -p paper-llncs2e/$(OUTDIR)
+	cd paper-llncs2e && latexmk $(FLAGS_PDFLATEX) paper-llncs2e.tex
+
+output-paper-llncs2e: output/paper-llncs2e/paper-llncs2e.pdf
+
+output/paper-llncs2e/paper-llncs2e.pdf: paper-llncs2e
+	mkdir -p output/paper-llncs2e/
+	cp paper-llncs2e/$(OUTDIR)/paper-llncs2e.pdf output/paper-llncs2e/
+
+clean-paper-llncs2e:
+	rm -f paper-llncs2e/$(OUTDIR)/*
+
+###############################################################################
 # Simple baposter
 ###############################################################################
 
