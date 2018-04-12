@@ -6,14 +6,14 @@ FLAGS_LUALATEX = 	-use-make 	-bibtex -lualatex	-outdir=$(OUTDIR)
 
 ###############################################################################
 
-all: paper-ieeetran paper-sigchi paper-acm-sig-alternate poster poster-nccr presentation-simple presentation-hri
+all: paper-ieeetran paper-sigchi paper-acm-sig-alternate paper-llncs2e poster poster-nccr presentation-simple presentation-hri
 
-output: output-paper-ieeetran output-paper-sigchi output-paper-acm-sig-alternate output-poster output-poster-nccr output-presentation-simple output-presentation-hri
+output: output-paper-ieeetran output-paper-sigchi output-paper-acm-sig-alternate output-paper-llncs2e output-poster output-poster-nccr output-presentation-simple output-presentation-hri
 
 clean-output:
 	rm -rf output/
 
-clean: clean-paper-ieeetran clean-paper-sigchi clean-paper-acm-sig-alternate clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
+clean: clean-paper-ieeetran clean-paper-sigchi clean-paper-acm-sig-alternate clean-paper-llncs2e clean-poster clean-poster-nccr clean-presentation-simple clean-presentation-hri
 
 ###############################################################################
 # IEEEtran paper
