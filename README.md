@@ -12,6 +12,7 @@ Here are the current modules:
   - **paper-ieeetran**: A IEEEtran conference paper template, built with pdflatex. *Requires the IEEEtran package.*
   - **paper-sigchi**: The official 2016 SIGCHI proceedings paper template, built with pdflatex.
   - **paper-acm-sig-alternate**: ACM conference proceedings template (may not adhere to SIG proceedings styles), built with pdflatex.
+  - **paper-llncs2e**: Springer Lecture Notes in Computer Science (LNCS) LaTeX 2e format, built with pdflatex.
   - **poster**: A baposter poster template, built with pdflatex.
   - **poster-nccr**: NCCR poster template as an SVG, built with inkscape. *Requires inkscape.*
   - **presentation-simple**: A simple beamer presentation template, including in-frame video playback, built with lualatex.
